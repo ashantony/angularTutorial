@@ -11,5 +11,9 @@ app.config(function($routeProvider) {
     .when("/contactus", {
         templateUrl : "view/contactus.html",
         controller: "FormController"
+    })
+    .when("/contactlist", {
+        templateUrl : "view/contactlist.html",
+        controller: "ContactlistController"
     });
 });

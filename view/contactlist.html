@@ -1,0 +1,47 @@
+
+<!-- search bar--><!-- </br> -->
+<label >Search</label>
+ <input type="text" ng-model="search" class="table" placeholder="Search"> </br>
+<!-- dynamic table -->
+<table class="table" >
+      <tr>
+          <th><a href="" ng-click="orderByField='firstname'; reverseSort = !reverseSort">First Name</a></th>
+
+          <th><a href="" ng-click="orderByField='lastname'; reverseSort = !reverseSort">Last Name</th>  
+          <th><a href="" ng-click="orderByField='myAddress'; reverseSort = !reverseSort">Address</th>  
+          <th><a href="" ng-click="orderByField='email'; reverseSort = !reverseSort">Email</th>  
+          <th><a href="" ng-click="orderByField='phonenumber'; reverseSort = !reverseSort">Phone Number</th>
+           <th>Gender</th>
+           <th>Action</th>
+         
+   
+      </tr>
+         <!-- populating table -->
+      <tr ng-repeat="item in dataArray | orderBy:orderByField:reverseSort | filter :search" >
+
+          <td>{{item.firstname | titleCase}} </td>
+          <td>{{item.lastname | titleCase}}</td>
+          <td>{{item.myAddress}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phonenumber}}</td>
+          <td>{{item.myVar | titleCase}}</td>  
+          <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(item)"/></td>   
+      </tr>
+      
+    
+     
+</table> 
+
+
+
+<!--  dropdown listing using selectbox 
+
+ <div>
+		 <select ng-model="selectedData" ng-options="x for x in data"></select>
+		 <option ng-repeat="x in firstname" value="{{x.model}}">{{x.model}}</option>
+		  <option ng-repeat="x in lastname" value="{{x.model}}">{{x.model}}</option>
+		   <option ng-repeat="x in email" value="{{x.model}}">{{x.model}}</option>
+		    <option ng-repeat="x in phonenumber" value="{{x.model}}">{{x.model}}</option>
+			 <h1>You selected: {{selectedData.firstname}}</h1>
+			 <p>Its color is: {{selectedCar.color}}</p>
+</div>  -->

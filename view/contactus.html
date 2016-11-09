@@ -3,26 +3,26 @@
 
 	<form name="myForm">
 	<!-- input fields are given -->
-   		First Name:<input type="text" name="firstname" ng-model="firstname" required>
+   		First Name:<input type="text" name="firstname" ng-model="form.firstname" required>
    		<!-- Validating first name -->
    		<span ng-show="myForm.firstname.$touched && myForm.firstname.$invalid">*</span></br></br>
 
-   	 	Last Name:<input type="text" name="lastname" ng-model="lastname" required>
+   	 	Last Name:<input type="text" name="lastname" ng-model="form.lastname" required>
    	 	<!-- validating last name -->
    	 	<span ng-show="myForm.lastname.$touched && myForm.lastname.$invalid">*</span></br></br>
    	 	
-   	 	Address<input name="myAddress" ng-model="myAddress" required>
+   	 	Address<input type="text" name="myAddress" ng-model="form.myAddress" required>
    	 	<!-- validating address -->
    	 	<span ng-show="myForm.myAddress.$touched && myForm.myAddress.$invalid">*</span></br></br>
     	
-    	Email: <input type="email" name="myAddress" ng-model="text" required>
+    	Email: <input type="email" name="email" ng-model="form.email" required>
     	<!-- validating User email Id -->
-    	<span ng-show="myForm.myAddress.$error.email">Not a valid e-mail</span></br></br>
+    	<span ng-show="myForm.email.$error.email">Not a valid e-mail</span></br></br>
     	
-    	Phone Number:<input type="text" name="phonenumber" ng-model="phonenumber"></br></br> 	
+    	Phone Number:<input type="text" name="phonenumber" ng-model="form.phonenumber"></br></br> 	
     	
-    	Male<input type="radio" ng-model="myVar" value="male">
-  		Female<input type="radio" ng-model="myVar" value="female"></br></br>  	
+    	Male<input type="radio" ng-model="form.myVar" value="male">
+  		Female<input type="radio" ng-model="form.myVar" value="female"></br></br>  	
     	
     	<button ng-click="submit()">SUBMIT</button>
 
