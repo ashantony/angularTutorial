@@ -15,5 +15,16 @@ app.config(function($routeProvider) {
     .when("/contactlist", {
         templateUrl : "view/contactlist.html",
         controller: "ContactlistController"
+    })
+     .when("/product", {
+        templateUrl : "view/product.html",
+        controller: "ProductController"
+    })
+     .when("/productlist", {
+        templateUrl : "view/productlist.html",
+        controller: "ProductlistController"
     });
+
+      
+    
 });

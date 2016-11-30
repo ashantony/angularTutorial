@@ -1,4 +1,4 @@
- angular.module('myApp');
+var app= angular.module('myApp');
 // console.log(app,"----")
 app.controller('FormController', function($scope) {
     
@@ -26,3 +26,4 @@ alert()
 	}
     
 });
+

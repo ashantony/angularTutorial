@@ -1,5 +1,5 @@
 
-angular.module("myApp")
+var myApp= angular.module("myApp")
 	.controller('ContactlistController',function($scope)
 		{	
 			function getData(){
@@ -27,21 +27,78 @@ angular.module("myApp")
 });
 
 				
-			angular.module("myApp")
-				.filter( 'titleCase', function() {
-					return function(input) {
-						// input=input;
-						
-						return input.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+		// angular.module("myApp")
+			myApp.filter( 'titleCase', function() {
+				return function(input) {
+						// input=input;		
+					return input.replace(/\w\S*/g, function(txt){
+						return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 				}
 			});
 
+		
 
-var myApp = angular.module('myApp');
- 
-myApp.controller('myController', function($scope) {
-    $scope.dataArray = [];
+	
+
+			// 	myApp.directive('myContactDetails', function() {
+			// 	  return {
+			// 	    restrict: 'E',
+			// 	    transclude: 'true',
+			// 	    template = " <b>{{myContactDetails.firstname}} , {{myContactDetails.lastname}}</b>";
+ 		// 		    link: function($scope, element, attrs) {
+   //          $scope.clickMe= function() {
+   //              alert('inside click');
+   //          }
+			// 	  }
+			// 	}
+			// }
+				
+// 
+// Creating custom directive(directive name: myContactDetails for popover contact details)
+
+	myApp.directive('myContactDetails', function() {
+    return {
+    	scope: {
+    		dataarray:'@'
+    	},
+    	
+        // restrict: 'A',
+        // replace: true,
+        template: '<span>{{label}}</span>',
+        link: function(scope, element, attrs) {
+        		// console.log(scope.dataArray,"elements");
+        	scope.label = attrs.popoverLabel;
+        	$(element).find("span").popover({
+
+        		trigger:'click',
+        		html:true,
+        		content:attrs.dataarray,
+        		placement:'top'
+        	});
+
+            // scope.clickMe= function() {
+            //     alert("click me inside fun");
+            // }
+        }
+    }
 });
+
+
+// 		link: function(scope, element, attr){
+//         element.append("<strong>"+attr.fname+" </strong>");
+//         if(attr.firstname === ''){
+//             element.append("<br> hi!");
+//         }
+//         else {
+//             element.append("<br> hello!!");
+//         }
+//       }
+
+//       	<script>
+// $(document).ready(function(){
+//     $('[data-toggle="popover"]').popover();
+// });
+
 
 
 

@@ -1,0 +1,91 @@
+<h2>Find the Products</h2>
+
+<div class="container">
+ <form class="form-horizontal" name="productform">
+        <div class="form-group">
+            <label for="productName" class="control-label col-xs-2">Product Name</label>
+             <div class="col-xs-12 col-sm-6">
+                <input type="productname" class="form-control" id="productName" placeholder="Name the product" ng-model="productform.productName">
+            </div>
+        </div>
+
+ <div class="form-group">
+			<label for="inputCategory" class="control-label col-xs-2">Category</label>
+             <div class="col-xs-12 col-sm-6">
+                <input type="category" class="form-control" id="category" >
+
+
+			        <select                                               
+			        ng-model="productform.category"
+			        ng-options="item as item.category for item in items"
+			        ng-change="changeItem()"
+			        ></select>
+              <!-- <select ng-options="item as item.category for item in items" ng-model="category" ></select> -->
+            </div>
+   	</div>
+
+ <div class="form-group">
+			<label for="inputSubategory" class="control-label col-xs-2">Subcategory</label>
+             <div class="col-xs-12 col-sm-6">
+                <input type="subcategory" class="form-control" id="subcategory"  >
+                <select ng-options="item.subcategory for item in available" ng-model="productform.subcategory" ></select>
+            </div>
+
+    </div>
+        
+        <div class="form-group">
+            <label for="inputUser" class="control-label col-xs-2">User</label>
+           <!--  <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span> -->
+            <div class="col-xs-10">
+                <input type="user" class="form-control" id="user" placeholder="User" ng-model="productform.user">
+            </div>
+        </div>      
+
+      <div class="form-group">
+  		<label class="col-md-4 control-label" for="filebutton">Images</label>
+  			<div class="col-md-4">
+    		<input image-change id="filebutton" name="filebutton" class="input-file" type="file" ng-model="productform.images"  >
+    		
+		
+   				 <span class="text" style="width:50px;height:50px;"></span>
+   			 </div>
+  		</div>
+  
+  <div>
+	</br> 
+	<!-- <button type="button" ng-model="button" class="btn btn-primary">Save</button> -->
+	</div class="form-group">
+      <div class="col-lg-offset-2">
+          <button type="submit" class="btn btn-success" ng-click=submit("productform.submit") >Submit</button>
+      </div>
+      </div>
+</div>
+     
+ </form>
+
+</div>        
+
+
+
+
+
+<!-- <select class="form-control" ng-model="NewProduct.category" ng-options="category as category.name for category in Categories | orderBy:['name']" required></select> -->
+
+
+  <!-- <div class="form-group">
+			<label for="inputCategory" class="control-label col-xs-2">Category</label>
+             <div class="col-xs-12 col-sm-6">
+                <input type="category" class="form-control" id="form.inputCategory" class="btn btn-default dropdown-toggle" data-toggle="dropdown" placeholder="Category">
+            </div>
+        	<div class="input-group">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Furnitures</a></li>
+                    <li><a href="#">Books</a></li>
+                    
+                </ul>
+            </div>
+          
+        </div> -->

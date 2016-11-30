@@ -1,4 +1,7 @@
-
+ <div class="tableRow">
+  <!-- <h3>Popover Example</h3> -->
+  <!-- <a href="#" data-toggle="popover"  data-content="my-contact-details" >User</a> -->
+</div>
 <!-- search bar--><!-- </br> -->
 <label >Search</label>
  <input type="text" ng-model="search" class="table" placeholder="Search"> </br>
@@ -13,6 +16,7 @@
           <th><a href="" ng-click="orderByField='phonenumber'; reverseSort = !reverseSort">Phone Number</th>
            <th>Gender</th>
            <th>Action</th>
+           <th>Link</th>
          
    
       </tr>
@@ -25,13 +29,15 @@
           <td>{{item.email}}</td>
           <td>{{item.phonenumber}}</td>
           <td>{{item.myVar | titleCase}}</td>  
-          <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(item)"/></td>   
+          <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(item)"/></td>
+       <!--  <td>
+        <my-contact-details > </my-contact-details>
+         -->
+        <td my-contact-details dataarray="{{item.firstname}} {{item.lastname}} {{item.phonenumber}}"  popover-placement="bottom" popover-label="User"></td> 
+         <!-- <button type="button" class="btn btn-link " ng-click="clickMe()">User</button></td>  --> 
       </tr>
       
-    
-     
-</table> 
-
+ </table> 
 
 
 <!--  dropdown listing using selectbox 
